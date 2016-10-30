@@ -77,6 +77,9 @@ type tokens struct {
 }
 
 func (t *tokens) Reset() {
+	if t.n == 0 {
+		return
+	}
 	t.n = 0
 	for i := range t.litHist {
 		t.litHist[i] = 0
